@@ -2,7 +2,7 @@ import React from "react";
 import "../css/home.css";
 import { NavLink } from "react-router-dom";
 
-const Home = () => {
+const Home = ({account}) => {
   return (
     <div className="container">
       <div id="login-type-container">
