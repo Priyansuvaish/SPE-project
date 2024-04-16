@@ -250,19 +250,21 @@ const ReactTable = React.memo((props) => {
               type="submit"
               onClick={async (e) => {
                 console.log("id", props.distributorId);
-                if (
-                  !data[0].item ||
-                  !data[0].description ||
-                  !data[0].cost ||
-                  !data[0].quantity ||
-                  !props.vendorName ||
-                  !props.consumerName ||
-                  !props.vendorAdd ||
-                  !props.consumerAdd ||
-                  !props.distributorId
-                ) {
-                  setAssetMessage("Plese fill all the fields");
-                } else {
+                console.log(
+                  data[0].item,
+                  data[0].description,
+                  data[0].cost,
+                  data[0].quantity,
+                  props.vendorName,
+                  props.consumerName,
+                  props.vendorAdd,
+                  props.consumerAdd,
+                  props.distributorId
+                );
+                // if (
+                //   !data[0].item ||!data[0].description || !data[0].cost || !data[0].quantity || !props.vendorName || !props.consumerName || !props.vendorAdd || !props.consumerAdd || !props.distributorId) {
+                //   setAssetMessage("Plese fill all the fields");
+                // } else {
                   setAssetMessage("Creating...");
                   e.preventDefault();
                   console.log(
@@ -345,7 +347,7 @@ const ReactTable = React.memo((props) => {
                     console.log("unable to create asset");
                   }
                 }
-              }}
+              }
               className="btn"
               style={{ marginLeft: "40%" }}
             >

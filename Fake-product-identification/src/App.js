@@ -82,7 +82,12 @@ const App = () => {
 
       setCurrentAccount(accounts[0]);
       const provider = new ethers.providers.Web3Provider(ethereum);
+      console.log(provider);
+
       const signer = provider.getSigner();
+      console.log(signer);
+      console.log(CONTRACT_ADDRESS);
+
       const contract = new ethers.Contract(
         CONTRACT_ADDRESS,
         AssetTracker.abi,

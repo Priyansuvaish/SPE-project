@@ -30,10 +30,13 @@ const GetStarted = ({ contract, account }) => {
   const { pathname } = useLocation();
 
   console.log(account);
+  console.log();
+
 
   const checkAccount = () => {
-    setShow(account === process.env.REACT_APP_WALLET_ADD);
+    setShow(account === "0xd568ba4ba5247754cdcdbf703ffaa75287676115");
   };
+  console.log(show);
 
   useEffect(() => {
     checkAccount();
