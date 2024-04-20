@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { QrReader } from "react-qr-reader";
-import axios from "axios";
+import axios from "axios"
 
 import "../css/Authenticate.css";
+import { wait } from "@testing-library/user-event/dist/utils";
+
+function isParseableJSON(str) {
+  try {
+      JSON.parse(str);
+      return true;
+  } catch (e) {
+      return false;
+  }
+}
+
 const Authenticate = ({ account }) => {
   const [auth, setAuth] = useState(false);
   const [message, setMessage] = useState("");
@@ -19,26 +30,32 @@ const Authenticate = ({ account }) => {
         <h2 style={{ position: "absolute", top: 20 }}>
           Hold QR Code Steady and Clear to Scan
         </h2>
+        
+        <div style={{margin:2,width: 300,
+        height: 300}}>
         <QrReader 
           constraints={{
             facingMode: "environment",
           }}
           key="environment"
           onResult={async (result, error) => {
-            if (!!result && !!result?.text) {
-              let data = JSON.parse(result?.text);
-
-              if (data.hash) {
-                // let res = await axios.get(
-                //   `https://api-rinkeby.etherscan.io/api?module=proxy&action=eth_getTransactionByHash&txhash=${data.hash}&apikey=${process.env.REACT_APP_ETHERSCAN_API_KEY}`
-                // );
-                console.log(data.hash)
-                let res = true
-                if (res) {
-                  setMessage("Product is Authenticated ✅");
-                  setAuth(true);
+            console.log(result);
+            if (!!result) {
+              if(isParseableJSON(result.text)){
+                let data = JSON.parse(result.text)
+                if (data.hash) {
+                  
+                  console.log(data)
+                  let res = await axios.get(`http://192.168.167.12:4000/getTransaction/${data.hash}`)
+                  console.log(res)
+                  if (res) {
+                    setMessage("Product is Authenticated ✅");
+                    setAuth(true);
+                  }
                 }
               }
+              else alert("Invalid Qr code")
+              
             }
             if (!!error) {
               console.info(error);
@@ -46,6 +63,7 @@ const Authenticate = ({ account }) => {
           }}
           style={{ width: "100%" }}
         />
+        </div>
         <div
           style={{
             position: "absolute",
