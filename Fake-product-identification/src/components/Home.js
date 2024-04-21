@@ -36,7 +36,7 @@ const Home = ({ account }) => {
                   alt="manufacturer"
                   className="options-image"
                 />
-                <h1 className="options-image-caption">Distributor Login</h1>
+                <h1 className="options-image-caption">Distributor Register</h1>
               </div>
             </NavLink>
             <NavLink to="/authenticate" className="select-link">

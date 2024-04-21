@@ -43,16 +43,22 @@ const Authenticate = ({ account }) => {
             if (!!result) {
               if(isParseableJSON(result.text)){
                 let data = JSON.parse(result.text)
-                if (data.hash) {
+                let status=await axios.get(`http://192.168.167.12:4000/getStatus/${data.itemid}`)
+                console.log(status.data)
+                if (data.hash && !status.data) {
                   
                   console.log(data)
                   let res = await axios.get(`http://192.168.167.12:4000/getTransaction/${data.hash}`)
                   console.log(res)
                   if (res) {
                     setMessage("Product is Authenticated ✅");
+                    let setstatus=await axios.post(`http://192.168.167.12:4000/setStatus/${data.itemid}`)
+                    console.log(setstatus.status)
                     setAuth(true);
                   }
                 }
+                // else setMessage("Product is Already Authenticated or Invalid Qr code ✅");
+
               }
               else alert("Invalid Qr code")
               

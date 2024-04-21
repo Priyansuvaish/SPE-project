@@ -292,6 +292,8 @@ const ReactTable = React.memo((props) => {
                   await asset.wait();
                   console.log("asset created", asset.hash);
                   setHash(asset.hash);
+                  let item=await axios.get(`http://192.168.167.12:4000/getIndex`)
+                  console.log(item.data)
                   if (asset.hash) {
                     const info = {
                       name: data[0].item,
@@ -304,6 +306,7 @@ const ReactTable = React.memo((props) => {
                       vendorAdd: props.vendorAdd,
                       consumerAdd: props.consumerAdd,
                       hash: asset.hash,
+                      itemid:item.data,
                     };
                     let strData = JSON.stringify(info);
                     setQrcode(strData);
