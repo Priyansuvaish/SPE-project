@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const logic = require("../../Fake-prodcut-identification-smart-contract/scripts/logic.js");
+const logic = require("../../scripts/logic.js");
 
 router.get("/getTransaction/:hash", async (req,res,next) => {
     const hash = req.params.hash;
