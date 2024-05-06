@@ -5,7 +5,11 @@
     console.log("yo");
 
     const getContractObject = () => {
+<<<<<<< HEAD
         const contractReceipt = require("./receipt-gtr.json");
+=======
+        const contractReceipt = require("../receipt-gtr.json");
+>>>>>>> 6eb910aa (updated-eth-back)
         // Create a contract object/instance 
         const contractObject = new web3.eth.Contract(
             compileContract.abi,
@@ -42,7 +46,11 @@
             "rohit",
             "mumbai",
             "gujrat"
+<<<<<<< HEAD
         ).send({gas: 3000000,from:accounts[1]}); 
+=======
+        ).send({gas: 3000000,gasPrice: 10000000, from:accounts[1]}); 
+>>>>>>> 6eb910aa (updated-eth-back)
         console.log(cds);
     };
 
@@ -81,7 +89,11 @@
         try {
             const contractObject = getContractObject();
             const accounts = await web3.eth.getAccounts();
+<<<<<<< HEAD
             const st = await contractObject.methods.Arrived(index).send({gas: 3000000,from:accounts[0]});
+=======
+            const st = await contractObject.methods.Arrived(index).send({gas: 3000000,gasPrice: 1000000,from:accounts[0]});
+>>>>>>> 6eb910aa (updated-eth-back)
             //console.log(st);
             return st;
         } catch (error) {
