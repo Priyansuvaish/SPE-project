@@ -1,11 +1,9 @@
 
 const {Web3} = require("web3");
 
-<<<<<<< HEAD
-const hardhatNetworkURL = "http://192.168.167.12:7556";
-=======
+
 const hardhatNetworkURL = "http://localhost:8545";
->>>>>>> 6eb910aa (updated-eth-back)
+
 
 const web3Network = "gtr";
 const web3 = new Web3(hardhatNetworkURL);
