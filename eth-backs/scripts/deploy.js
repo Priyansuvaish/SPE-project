@@ -16,17 +16,12 @@ const main = async () => {
     // Deploying the contract
     console.log("Deploying the contract...");
     const result = await new web3.eth.Contract(
-<<<<<<< HEAD
-      compiledContract.abi // Use ABI directly instead of interface
-    )
-      .deploy({ data: compiledContract.bytecode })
-      .send({ gas: 3000000, from: accounts[0] });
-=======
+
       compiledContract.abi 
     )
       .deploy({ data: compiledContract.bytecode })
       .send({ gas: 3000000, gasPrice:1000000000, from: accounts[0] });
->>>>>>> 6eb910aa (updated-eth-back)
+
 
     console.log(`Contract deployed to ${result.options.address}`);
 
