@@ -29,6 +29,7 @@ pipeline {
                  {
                     sh 'npm install --save-dev hardhat'
                      sh 'npm install'  
+                     sh 'node -v'
                      
                  }
                 }
