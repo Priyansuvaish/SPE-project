@@ -27,7 +27,7 @@ pipeline {
                 {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") 
                  {
-                    sh 'npm install --save-dev hardhat'
+                    sh 'sudo npm install -g hardhat'
             
                  }
                 }
