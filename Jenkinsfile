@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") {
-                sh 'hardhat compile' 
+                sh 'npx hardhat compile' 
                 }
             }
         }
