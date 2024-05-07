@@ -28,15 +28,13 @@ pipeline {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") 
                  {
                     sh 'npm install --save-dev hardhat'
-                     sh 'npm install'
-                     sh 'hardhat compile'  
-            
+                     sh 'npm install'  
                  }
                 }
             }
         }
             
-      /*  stage('Build and Test Backend code') {
+       stage('Build and Test Backend code') {
             steps {
                 script {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") {
@@ -44,7 +42,7 @@ pipeline {
                 }
             }
         }
-        }*/
+        }
 
         
         stage('Build Docker Image for the ganache Blockchain') {
