@@ -7,7 +7,7 @@ pipeline {
     }
     environment {
          DOCKER_GAN_NAME = 'ganache'
-         DOCKER_ETH_NAME = 'eth-back'
+         DOCKER_ETH_NAME = 'eth-backs'
          DOCKER_FRONTEND = 'gan-frontend'
          GITHUB_REPO_URL = 'https://github.com/Priyansuvaish/SPE-project.git'
     }
@@ -23,21 +23,31 @@ pipeline {
         stage('Build and Test Backend code') {
             steps {
                 script {
-                dir("/var/lib/jenkins/workspace/eth-project") {
+                dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") {
                 sh 'hardhat compile' 
                 }
             }
         }
         }
-     stage('Build Docker Image') {
+
+        
+        stage('Build Docker Image for the ganache Blockchain') {
             steps {
                 script {
                     // Build Docker image
-                    docker.build("${DOCKER_IMAGE_NAME}", '.')
+                    docker.build("${DOCKER_GAN_NAME}", '-f /var/lib/jenkins/workspace/eth-project/Dockerfile .')
                 }
             }
         }
-        stage('Push Docker Images') {
+     stage('Build Docker Image for the Backend') {
+            steps {
+                script {
+                    // Build Docker image
+                    docker.build("${DOCKER_ETH_NAME}", '-f /var/lib/jenkins/workspace/eth-project/eth-backs/docker_backend .')
+                }
+            }
+        }
+        /*stage('Push Docker Images') {
             steps {
                 script{
                     docker.withRegistry('', 'docker') {
@@ -46,8 +56,8 @@ pipeline {
                     }
                  }
             }
-        }
-        stage('Run Ansible Playbook') {
+        }*/
+        /*stage('Run Ansible Playbook') {
             steps {
                 script {
                     ansiblePlaybook(
@@ -56,7 +66,7 @@ pipeline {
                      )
                 }
             }
-        }
+        }*/
     
        
      }
