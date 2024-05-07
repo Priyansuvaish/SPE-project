@@ -27,8 +27,6 @@ pipeline {
                 {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") 
                  {
-                    sh 'nvm install 21'
-                     sh 'nvm use 21'
                     sh 'npm install --save-dev hardhat'
                      sh 'npm install'  
                      
