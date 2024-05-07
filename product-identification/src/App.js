@@ -20,7 +20,7 @@ import SideBar from "./components/SideBar";
 import Authenticate from "./components/Authenticate";
 import GetStarted from "./components/getStarted";
 
-const CONTRACT = await axios.get(`http://${process.env.REACT_APP_LOCALHOST}/get_addr`)
+const CONTRACT = await axios.get(`http://${process.env.REACT_APP_BACKEND_SERVICE_URL}/get_addr`)
 const CONTRACT_ADDRESS=CONTRACT.data
 console.log(CONTRACT_ADDRESS)
 

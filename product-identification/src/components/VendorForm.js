@@ -292,7 +292,7 @@ const ReactTable = React.memo((props) => {
                   await asset.wait();
                   console.log("asset created", asset.hash);
                   setHash(asset.hash);
-                  let item=await axios.get(`http://${process.env.REACT_APP_LOCALHOST}/getIndex`)
+                  let item=await axios.get(`http://${process.env.REACT_APP_BACKEND_SERVICE_URL}/getIndex`)
                   console.log(item.data)
                   if (asset.hash) {
                     const info = {

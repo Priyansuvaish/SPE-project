@@ -40,19 +40,19 @@ const Authenticate = ({ account }) => {
           key="environment"
           onResult={async (result, error) => {
             console.log(result);
-            console.log(process.env.REACT_APP_LOCALHOST)
+            console.log(process.env.REACT_APP_BACKEND_SERVICE_URL )
             if (!!result) {
               if(isParseableJSON(result.text)){
                 let data = JSON.parse(result.text)
-                let status=await axios.get(`http://${process.env.REACT_APP_LOCALHOST}/getStatus/${data.itemid}`)
+                let status=await axios.get(`http://${process.env.REACT_APP_BACKEND_SERVICE_URL }/getStatus/${data.itemid}`)
                 console.log(status.data)
                   
                   console.log(data)
-                  let res = await axios.get(`http://${process.env.REACT_APP_LOCALHOST}/getTransaction/${data.hash}`)
+                  let res = await axios.get(`http://${process.env.REACT_APP_BACKEND_SERVICE_URL }/getTransaction/${data.hash}`)
                   console.log(res)
                   if (res) {
                     setMessage("Product is Authenticated ✅");
-                    let setstatus=await axios.post(`http://${process.env.REACT_APP_LOCALHOST}/setStatus/${data.itemid}`)
+                    let setstatus=await axios.post(`http://${process.env.REACT_APP_BACKEND_SERVICE_URL }/setStatus/${data.itemid}`)
                     console.log(setstatus.status)
                     setAuth(true);
                   }

@@ -5,7 +5,7 @@ import MainBar from "./MainBar";
 import "../css/products.css";
 import axios from "axios"
 
-const CONTRACT = await axios.get(`http://${process.env.REACT_APP_LOCALHOST}/acc_addr`)
+const CONTRACT = await axios.get(`http://${process.env.REACT_APP_BACKEND_SERVICE_URL}/acc_addr`)
 const acc=CONTRACT.data
 console.log(acc)
 
