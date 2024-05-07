@@ -1,7 +1,9 @@
 
 const {Web3} = require("web3");
 
-const hardhatNetworkURL = "http://192.168.167.12:7556";
+
+const hardhatNetworkURL = "http://ganache:8545";
+
 
 const web3Network = "gtr";
 const web3 = new Web3(hardhatNetworkURL);
