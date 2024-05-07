@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    docker.build("${DOCKER_GAN_NAME}", '-f /var/lib/jenkins/workspace/eth-project/dockerfile_ganache .')
+                    docker.build("${DOCKER_GAN_NAME}", '-f /var/lib/jenkins/workspace/eth-project/SPE-project/dockerfile_ganache .')
                 }
             }
         }
@@ -43,7 +43,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    docker.build("${DOCKER_ETH_NAME}", '-f /var/lib/jenkins/workspace/eth-project/eth-backs/docker_backend .')
+                    docker.build("${DOCKER_ETH_NAME}", '-f /var/lib/jenkins/workspace/eth-project/SPE-project/eth-backs/docker_backend .')
                 }
             }
         }
