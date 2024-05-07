@@ -30,6 +30,8 @@ pipeline {
                     sh 'npm install --save-dev hardhat'
                      sh 'npm install'  
                      sh 'node -v'
+                     sh 'nvm install 18'
+                     sh 'nvm use 18'
                      
                  }
                 }
