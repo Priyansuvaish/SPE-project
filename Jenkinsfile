@@ -20,6 +20,16 @@ pipeline {
                 }
             }
         }
+        stage('Installing hardhat')
+        {
+            steps {
+                script 
+                {
+                    sh 'npm install --save-dev hardhat'
+                }
+            }
+        }
+            
         stage('Build and Test Backend code') {
             steps {
                 script {
