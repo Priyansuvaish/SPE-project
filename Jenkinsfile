@@ -41,7 +41,7 @@ pipeline {
             
             steps {
                 script {
-                dir("/var/lib/jenkins/workspace/eth-project/product-verification/") {
+                dir("/var/lib/jenkins/workspace/eth-project/product-identification/") {
                 sh 'npm run build' 
                 }
             }
