@@ -42,7 +42,7 @@ pipeline {
             steps {
                 script {
                 dir("/var/lib/jenkins/workspace/eth-project/SPE-project/product-verification/") {
-                sh 'npx hardhat compile' 
+                sh 'npm run build' 
                 }
             }
         }
