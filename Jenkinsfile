@@ -36,7 +36,7 @@ pipeline {
                 }
             }
         }
-        /*stage('')
+        stage('Build frontend code')
         {
             
             steps {
@@ -48,9 +48,9 @@ pipeline {
         }
             
             
-        }*/
+        }
             
-       stage('Build and Test Backend code') {
+       /*stage('Build and Test Backend code') {
             steps {
                 script {
                 dir("/var/lib/jenkins/workspace/eth-project/SPE-project/eth-backs/") {
@@ -58,7 +58,7 @@ pipeline {
                 }
             }
         }
-        }
+        }*/
 
         
         stage('Build Docker Image for the ganache Blockchain') {
