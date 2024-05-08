@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script 
                 {
-                dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") 
+                dir("/var/lib/jenkins/workspace/eth-project/SPE-project/eth-backs/") 
                  {
                     sh 'npm install --save-dev hardhat'
                      sh 'npm install'  
@@ -36,11 +36,24 @@ pipeline {
                 }
             }
         }
+        /*stage('')
+        {
+            
+            steps {
+                script {
+                dir("/var/lib/jenkins/workspace/eth-project/SPE-project/product-verification/") {
+                sh 'npx hardhat compile' 
+                }
+            }
+        }
+            
+            
+        }*/
             
        stage('Build and Test Backend code') {
             steps {
                 script {
-                dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") {
+                dir("/var/lib/jenkins/workspace/eth-project/SPE-project/eth-backs/") {
                 sh 'npx hardhat compile' 
                 }
             }
