@@ -12,14 +12,14 @@ pipeline {
          GITHUB_REPO_URL = 'https://github.com/Priyansuvaish/SPE-project.git'
     }
 
-    /*stages {
+    stages {
           stage('Checkout') {
             steps {
                 script {
                     git branch: 'main', url: "${GITHUB_REPO_URL}"
                 }
             }
-        }*/
+        }
         stage('Installing hardhat')
         {
             steps {
@@ -46,12 +46,12 @@ pipeline {
                 sh 'npm run build ' 
                 }
             }
-        }*/
-            
-            
         }
             
-       /*stage('Build and Test Backend code') {
+            
+        }*/
+            
+       stage('Build and Test Backend code') {
             steps {
                 script {
                 dir("/var/lib/jenkins/workspace/eth-project/SPE-project/eth-backs/") {
@@ -59,7 +59,7 @@ pipeline {
                 }
             }
         }
-        }*/
+        }
 
         
         stage('Build Docker Image for the ganache Blockchain') {
