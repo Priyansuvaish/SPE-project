@@ -55,7 +55,7 @@ pipeline {
        stage('Build and Test Backend code') {
             steps {
                 script {
-                dir("/var/lib/jenkins/workspace/eth-project/SPE-project/eth-backs/") {
+                dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") {
                 sh 'npx hardhat compile' 
                 }
             }
