@@ -28,7 +28,7 @@ pipeline {
                 {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") 
                  {
-                    sh 'npm install -g hardhat --legacy-peer-deps'
+                    sh 'npm install -g hardhat --force'
                      sh 'npm install'  
                      sh 'node -v'
                      
