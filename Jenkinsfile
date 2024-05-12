@@ -4,6 +4,7 @@ pipeline {
     tools {
         
         git "Default"
+        nodejs 'nodejs'
     }
     environment {
          DOCKER_GAN_NAME = 'ganache'
