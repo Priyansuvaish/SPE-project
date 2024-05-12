@@ -12,14 +12,14 @@ pipeline {
          GITHUB_REPO_URL = 'https://github.com/Priyansuvaish/SPE-project.git'
     }
 
-    stages {
+    /*stages {
           stage('Checkout') {
             steps {
                 script {
                     git branch: 'main', url: "${GITHUB_REPO_URL}"
                 }
             }
-        }
+        }*/
         stage('Installing hardhat')
         {
             steps {
@@ -36,7 +36,7 @@ pipeline {
                 }
             }
         }
-        stage('Build frontend code')
+        /*stage('Build frontend code')
         {
             
             steps {
@@ -46,7 +46,7 @@ pipeline {
                 sh 'npm run build ' 
                 }
             }
-        }
+        }*/
             
             
         }
