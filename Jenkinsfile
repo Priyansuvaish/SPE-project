@@ -28,7 +28,7 @@ pipeline {
                 {
                 dir("/Users/jasssadana/.jenkins/workspace/eth-project/eth-backs/") 
                  {
-                    sh 'npm install -g hardhat --force'
+                    sh 'npm install --save-dev hardhat --force'
                     // sh 'npm install'  
                      sh 'node -v'
                      
