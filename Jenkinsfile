@@ -58,7 +58,7 @@ pipeline {
                 script {
                 dir("/Users/jasssadana/.jenkins/workspace/eth-project/eth-backs/") {
                 sh 'npx hardhat compile' 
-                sh 'docker --version'
+                // sh 'docker --version'
                 }
             }
         }
