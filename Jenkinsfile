@@ -5,7 +5,7 @@ pipeline {
         
         git "Default"
         nodejs 'nodejs'
-        docker 'docker'
+        dockerTool 'docker'
     }
     environment {
          DOCKER_GAN_NAME = 'ganache'
