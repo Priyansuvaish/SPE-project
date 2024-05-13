@@ -57,7 +57,7 @@ pipeline {
        stage('Build and Test Backend code') {
             steps {
                 script {
-                dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") {
+                dir("/Users/jasssadana/.jenkins/workspace/eth-project/eth-backs/") {
                 sh 'npx hardhat compile' 
                 sh 'docker --version'
                 }
