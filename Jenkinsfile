@@ -37,7 +37,7 @@ pipeline {
                 }
             }
         }
-        stage('Build frontend code')
+        /*stage('Build frontend code')
         {
             
             steps {
@@ -50,7 +50,7 @@ pipeline {
         }
             
             
-        }
+        }*/
             
        stage('Build and Test Backend code') {
             steps {
