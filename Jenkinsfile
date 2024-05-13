@@ -70,7 +70,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-
+                      sh 'docker --version'
                      docker.withRegistry('', 'dockers')
                     {
                     docker.build("${DOCKER_GAN_NAME}", '-f /Users/jasssadana/.jenkins/workspace/eth-project/dockerfile_ganache .')
