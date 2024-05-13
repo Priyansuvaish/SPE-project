@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script 
                 {
-                dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") 
+                dir("/Users/jasssadana/.jenkins/workspace/eth-project/eth-backs/") 
                  {
                     sh 'npm install --save-dev hardhat --force'
                     // sh 'npm install'  
@@ -71,10 +71,12 @@ pipeline {
                 script {
                     // Build Docker image
                       sh 'docker --version'
-                     docker.withRegistry('', 'dockers')
-                    {
-                    docker.build("${DOCKER_GAN_NAME}", '-f /var/lib/jenkins/workspace/eth-project/dockerfile_ganache .')
-                    }
+                    sh 'docker build -t eth-backs -f /Users/jasssadana/.jenkins/workspace/eth-project/dockerfile_ganache .'
+                    //  docker.withRegistry('', 'dockers')
+                    // {
+                       
+                    // //docker.build("${DOCKER_GAN_NAME}", '-f /Users/jasssadana/.jenkins/workspace/eth-project/dockerfile_ganache .')
+                    // }
                 }
             }
         }
@@ -82,7 +84,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    docker.build("${DOCKER_ETH_NAME}", '-f /var/lib/jenkins/workspace/eth-project/eth-backs/docker_backend .')
+                    docker.build("${DOCKER_ETH_NAME}", '-f /Users/jasssadana/.jenkins/workspace/eth-project/eth-backs/docker_backend .')
                 }
             }
         }
