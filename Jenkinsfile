@@ -73,7 +73,7 @@ pipeline {
                 script {
                     // Build Docker image
                       sh 'docker --version'
-                    sh 'docker build -t eth-backs -f /var/lib/jenkins/workspace/eth-project/dockerfile_ganache .'
+                    sh 'docker build -t ganache -f /var/lib/jenkins/workspace/eth-project/dockerfile_ganache .'
                     //  docker.withRegistry('', 'dockers')
                     // {
                        
@@ -86,6 +86,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
+                    sh 'docker build -t eth-backs -f /var/lib/jenkins/workspace/eth-project/dockerfile_ganache .'
                     docker.build("${DOCKER_ETH_NAME}", '-f /var/lib/jenkins/workspace/eth-project/eth-backs/docker_backend .')
                 }
             }
