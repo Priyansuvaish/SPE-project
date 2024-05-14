@@ -23,7 +23,7 @@ pipeline {
                 }
             }
         }
-        /*stage('Installing hardhat')
+        stage('Installing hardhat')
         {
             steps {
                 script 
@@ -38,7 +38,7 @@ pipeline {
                  }
                 }
             }
-        }*/
+        }
         /*stage('Build frontend code')
         {
             
