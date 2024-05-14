@@ -58,7 +58,6 @@ pipeline {
             steps {
                 script {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") {
-                sh 'npm fund'
                 sh 'npx hardhat compile' 
                // sh 'docker --version'
                 }
