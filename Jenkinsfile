@@ -30,7 +30,7 @@ pipeline {
                 {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") 
                  {
-                    sh 'npm install --save-dev hardhat --force'
+                    sh 'npm install --save-dev hardhat --arch=arm64 --force'
                     // sh 'npm install'  
                      sh 'node -v'
                      
