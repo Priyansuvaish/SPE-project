@@ -23,7 +23,7 @@ pipeline {
                 }
             }
         }
-        stage('Installing hardhat')
+        /*stage('Installing hardhat')
         {
             steps {
                 script 
@@ -38,7 +38,7 @@ pipeline {
                  }
                 }
             }
-        }
+        }*/
         /*stage('Build frontend code')
         {
             
@@ -58,7 +58,7 @@ pipeline {
             steps {
                 script {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") {
-                sh 'hardhat --version'
+                sh 'cd /var/lib/jenkins/workspace/eth-project/eth-backs/'
                 sh 'npx hardhat compile' 
     
                // sh 'docker --version'
