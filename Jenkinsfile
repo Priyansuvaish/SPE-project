@@ -23,14 +23,14 @@ pipeline {
                 }
             }
         }
-        /*stage('Installing hardhat')
+        stage('Installing hardhat')
         {
             steps {
                 script 
                 {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") 
                  {
-                    sh 'npm install --save-dev hardhat --arch=arm64 --force'
+                    sh 'npm install --save-dev hardhat'
                     // sh 'npm install'  
                      sh 'node -v'
                      
@@ -38,7 +38,7 @@ pipeline {
                  }
                 }
             }
-        }*/
+        }
         /*stage('Build frontend code')
         {
             
@@ -58,7 +58,6 @@ pipeline {
             steps {
                 script {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") {
-                sh 'cd /var/lib/jenkins/workspace/eth-project/eth-backs/'
                 sh 'npx hardhat compile' 
     
                // sh 'docker --version'
