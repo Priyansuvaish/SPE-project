@@ -54,7 +54,7 @@ pipeline {
             
         }*/
             
-       /*stage('Build and Test Backend code') {
+       stage('Build and Test Backend code') {
             steps {
                 script {
                 dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") {
@@ -63,7 +63,7 @@ pipeline {
                 }
             }
         }
-        }*/
+        }
 
         
         stage('Build Docker Image for the ganache Blockchain') {
