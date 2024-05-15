@@ -8,7 +8,7 @@ services:
       test: ["CMD", "true"]  # Dummy health check that always returns healthy
 
   eth-back:
-    image: secy2520/eth-back
+    image: secy2520/eth-backs
     ports:
       - '4000:4000'
    
