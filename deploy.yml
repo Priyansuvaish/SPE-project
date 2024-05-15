@@ -1,0 +1,7 @@
+---
+- name: Running the Docker compose script
+  hosts: localhost
+  remote_user: root
+  tasks:
+    - name: Running the script
+      shell: docker-compose up
