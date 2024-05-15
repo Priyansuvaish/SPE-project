@@ -100,7 +100,7 @@ pipeline {
                  }
             }
         }
-        /*stage('Run Ansible Playbook') {
+        stage('Run Ansible Playbook') {
             steps {
                 script {
                     ansiblePlaybook(
@@ -109,7 +109,7 @@ pipeline {
                      )
                 }
             }
-        }*/
+        }
     
        
      }
