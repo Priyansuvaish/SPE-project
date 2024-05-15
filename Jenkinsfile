@@ -71,14 +71,8 @@ pipeline {
         stage('Build Docker Image for the ganache Blockchain') {
             steps {
                 script {
-                    // Build Docker image
-                 
-                      sh 'docker --version'
-                    sh 'docker build -t ganache -f /var/lib/jenkins/workspace/eth-project/dockerfile_ganache .'
-                    //  docker.withRegistry('', 'dockers')
-                    // {
-                       
-                    // //docker.build("${DOCKER_GAN_NAME}", '-f /Users/jasssadana/.jenkins/workspace/eth-project/dockerfile_ganache .')
+                    // Build Docker image                   
+                    docker.build("${DOCKER_GAN_NAME}", '-f /Users/jasssadana/.jenkins/workspace/eth-project/dockerfile_ganache .')
                     // }
                 }
             }
@@ -88,22 +82,24 @@ pipeline {
                 script {
                     // Build Docker image
                        dir("/var/lib/jenkins/workspace/eth-project/eth-backs/") {
-                    sh 'docker build -t eth-backs -f /var/lib/jenkins/workspace/eth-project/eth-backs/docker_backend .'
-                    //docker.build("${DOCKER_ETH_NAME}", '-f /var/lib/jenkins/workspace/eth-project/eth-backs/docker_backend .')
+                    //sh 'docker build -t eth-backs -f /var/lib/jenkins/workspace/eth-project/eth-backs/docker_backend .'
+                    docker.build("${DOCKER_ETH_NAME}", '-f /var/lib/jenkins/workspace/eth-project/eth-backs/docker_backend .')
                        }
                 }
             }
         }
-        /*stage('Push Docker Images') {
+        stage('Push Docker Images') {
             steps {
                 script{
                     docker.withRegistry('', 'docker') {
-                    sh 'docker tag scientific_calculator secy2520/scientific_calculator:latest'
-                    sh 'docker push secy2520/scientific_calculator'
+                    sh 'docker tag eth-backs secy2520/eth-backs:latest'
+                    sh 'docker tag ganache secy2520/ganache:latest'
+                    sh 'docker push secy2520/eth-backs'
+                    sh 'docker push secy2520/ganache'
                     }
                  }
             }
-        }*/
+        }
         /*stage('Run Ansible Playbook') {
             steps {
                 script {
