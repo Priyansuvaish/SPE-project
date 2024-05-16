@@ -5,6 +5,7 @@ pipeline
     tools {
         
         git "Default"
+        nodejs 'nodejs'
       // dockerTool 'dockeri'
     }
     environment {
@@ -27,7 +28,7 @@ pipeline
             
             steps {
                 script {
-                dir("/var/lib/jenkins/workspace/front/product-identification/") {
+                dir("/var/lib/jenkins/workspace/eth-project/product-identification/") {
                 sh 'npm install --force'
                 sh 'npm run build ' 
                 }
