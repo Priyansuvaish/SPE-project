@@ -104,7 +104,7 @@ pipeline {
             steps {
                 script{
                    
-                   sh 'docker system prune -y'
+                   sh 'docker system prune -f'
                    
                     
                  }
