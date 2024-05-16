@@ -15,7 +15,7 @@ pipeline {
     }
 
     stages {
-          /*stage('Checkout') {
+        stage('Checkout') {
             steps {
                 script {
                     git branch: 'main', url: "${GITHUB_REPO_URL}"
@@ -65,10 +65,10 @@ pipeline {
                 }
             }
         }
-        }*/
+        }
 
         
-        /*stage('Build Docker Image for the ganache Blockchain') {
+        stage('Build Docker Image for the ganache Blockchain') {
             steps {
                 script {
                     // Build Docker image                   
@@ -99,7 +99,18 @@ pipeline {
                     }
                  }
             }
-        }*/
+        }
+        stage('Removing all present images and the containers ') {
+            steps {
+                script{
+                   
+                    sh 'docker image prune -a'
+                    sh 'docker container prune -a'
+                   
+                    
+                 }
+            }
+        }
         stage('Run Ansible Playbook') {
             steps {
                 script {
