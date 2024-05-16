@@ -15,7 +15,7 @@ pipeline {
     }
 
     stages {
-          stage('Checkout') {
+          /*stage('Checkout') {
             steps {
                 script {
                     git branch: 'main', url: "${GITHUB_REPO_URL}"
@@ -65,7 +65,7 @@ pipeline {
                 }
             }
         }
-        }
+        }*/
 
         
         /*stage('Build Docker Image for the ganache Blockchain') {
