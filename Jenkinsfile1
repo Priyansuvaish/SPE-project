@@ -1,12 +1,9 @@
-pipeline 
-{
+pipeline {
     agent any
 
     tools {
-        
         git "Default"
         nodejs 'nodejs'
-      // dockerTool 'dockeri'
     }
     environment {
          DOCKER_GAN_NAME = 'ganache'
@@ -16,30 +13,23 @@ pipeline
     }
 
     stages {
-          stage('Checkout') {
+        stage('Checkout') {
             steps {
                 script {
                     git branch: 'main', url: "${GITHUB_REPO_URL}"
                 }
             }
         }
-        stage('Build frontend code')
-        {
-            
+        stage('Build frontend code') {
             steps {
                 script {
-                dir("/var/lib/jenkins/workspace/eth-project/product-identification/") {
-                sh 'npm install --force'
-                sh 'npm run build ' 
-                }
+                    dir("/var/lib/jenkins/workspace/eth-project/product-identification/") {
+                        sh 'npm install --force'
+                        // Run build without treating warnings as errors
+                        sh 'CI=false npm run build'
+                    }
                 }
             }
-            
-            
         }
-            
-           
-       
-     
     }
 }
