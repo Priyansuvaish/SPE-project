@@ -68,7 +68,7 @@ pipeline {
         }
 
         
-        stage('Build Docker Image for the ganache Blockchain') {
+        /*stage('Build Docker Image for the ganache Blockchain') {
             steps {
                 script {
                     // Build Docker image                   
@@ -99,7 +99,7 @@ pipeline {
                     }
                  }
             }
-        }
+        }*/
         stage('Run Ansible Playbook') {
             steps {
                 script {
