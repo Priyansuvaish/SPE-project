@@ -27,7 +27,7 @@ pipeline
             
             steps {
                 script {
-                dir("/var/lib/jenkins/workspace/eth-project/product-identification/") {
+                dir("/var/lib/jenkins/workspace/front/product-identification/") {
                 sh 'npm install --force'
                 sh 'npm run build ' 
                 }
