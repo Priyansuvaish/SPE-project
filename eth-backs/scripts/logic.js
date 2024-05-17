@@ -43,11 +43,8 @@
             "rohit",
             "mumbai",
             "gujrat"
-<<<<<<< HEAD
-        ).send({gas: 3000000,from:accounts[1]}); 
-=======
-        ).send({gas: 3000000,gasPrice: 10000000, from:accounts[1]}); 
->>>>>>> 6eb910aa (updated-eth-back)
+
+        ).send({gas: 3000000,gasPrice: 10000000, from:accounts[1]});
         console.log(cds);
     };
 
